@@ -1,3 +1,21 @@
+let currentQuestionIndex = 0;
+let score = 0;
+
+//set timer
+function setTimer () {
+    var timerIntterval = setInterval(function(){
+        secondsLeft--;
+        timeEl.textContent = secondsLeft + "Time remaining";
+        if (secondsLeft === 0) {
+            clearInterval(timerInterval);
+            sendMessage();
+        }
+    })
+}
+function sendMessage(){
+    timeE1.textcontent = "Time is up!"
+}
+
 //identify constants
 const questions = [
     {
@@ -9,7 +27,7 @@ const questions = [
             {text: "numbers", correct: false},
 
         ]
-    },
+    },  
     //add questions for quiz
     {
         question: "The condition in an if/else statement is kept inside of ___",
@@ -57,4 +75,58 @@ const questions = [
         ]
     }
 ];
+startQuiz()
+function showResults() {
+    if (answer-Button == true) {
+        console.log ("correct")
+    } else {
+        console.log("wrong")
+    }
+}
 const questionElement = document.getElementById("question");
+const answerButton = document.getElementById("answer-button");
+addEventListener('answer-Button', showResults)
+
+
+
+function startQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+    showQuestion()
+}
+function showQuestion() {
+
+    var questionEl = document.createElement("h2")
+    var answerContainer = document.createElement("div")
+    questionEl.id = "question"
+    answerContainer.id = "answer-button"
+    questionEl.textContent = questions[currentQuestionIndex].question
+
+    for (i = 0; i < questions[currentQuestionIndex].answers.length; i ++) {
+        var choiceButton = document.createElement("button")
+        choiceButton.textContent = questions[currentQuestionIndex].answers[i].text
+        choiceButton.classList.add("btn")
+        choiceButton.setAttribute("data-correct", questions[currentQuestionIndex].answers[i].correct)
+        answerContainer.append(choiceButton)
+    
+    }
+
+    document.querySelector(".app").append(questionEl, answerContainer)
+
+    // let currentQuestion = questions[currentQuestionIndex]
+    // let questionNo = currentQuestionIndex + 1;
+    // questionElement.innerHTML = questionNo + "." + currentQuestion.
+    // question;
+}
+function checkAnswer(event) {
+    if (event.target.tagName === "BUTTON") {
+        console.log(event.target.dataset.correct)
+        if (event.target.dataset.correct == true) {
+            console.log("correct!")
+        } else {
+            console.log ("incorrect")
+        }
+    }
+}
+
+document.querySelector(".app").addEventListener("click", checkAnswer)
