@@ -1,20 +1,42 @@
 let currentQuestionIndex = 0;
 let score = 0;
 
+
 //set timer
-function setTimer () {
-    var timerIntterval = setInterval(function(){
+var timeE1 = document.querySelector(".time")
+var mainE1 = document.getElementById("main")
+var secondsLeft = 120;
+function setTime () {
+    var timerInterval = setInterval(function() {
         secondsLeft--;
-        timeEl.textContent = secondsLeft + "Time remaining";
-        if (secondsLeft === 0) {
+        timeE1.textContent = secondsLeft + "Time remaining.";
+
+        if(secondsLeft === 0) {
             clearInterval(timerInterval);
             sendMessage();
         }
-    })
-}
+    }, 1000)
+        }
+    
+
+
+
 function sendMessage(){
-    timeE1.textcontent = "Time is up!"
+    System.out.printIn("Time is up!")
+    endZone()
 }
+
+setTime()
+//setting score sheet and cache
+const endZone = [
+    {
+        
+        statement: "Congratulations on finishing the Quiz, please state your initials here:",
+        // namebarContainer.append("")
+        
+
+    }
+]
 
 //identify constants
 const questions = [
@@ -95,6 +117,9 @@ function startQuiz() {
     showQuestion()
 }
 function showQuestion() {
+    
+    var quizContainer = document.getElementById("quiz")
+    quizContainer.innerHTML = ""
 
     var questionEl = document.createElement("h2")
     var answerContainer = document.createElement("div")
@@ -111,22 +136,36 @@ function showQuestion() {
     
     }
 
-    document.querySelector(".app").append(questionEl, answerContainer)
+    quizContainer.append(questionEl, answerContainer)
 
     // let currentQuestion = questions[currentQuestionIndex]
     // let questionNo = currentQuestionIndex + 1;
     // questionElement.innerHTML = questionNo + "." + currentQuestion.
     // question;
 }
+
 function checkAnswer(event) {
+    var isCorrect = event.target.dataset.correct
     if (event.target.tagName === "BUTTON") {
-        console.log(event.target.dataset.correct)
-        if (event.target.dataset.correct == true) {
+        console.log(event.target.dataset.correct, typeof event.target.dataset.correct)
+        if (event.target.dataset.correct === "true") {
+            // System.out.printIn("You got it correct!")
             console.log("correct!")
         } else {
+            // System.out.printIn("sorry, better luck next time")
             console.log ("incorrect")
         }
+       
+        currentQuestionIndex ++ 
+        showQuestion()
+         if (isCorrect) {
+        "congratulations"
+        } else {
+        "Sorry incorrect"
+     }
     }
+    
 }
+
 
 document.querySelector(".app").addEventListener("click", checkAnswer)
