@@ -22,21 +22,20 @@ function setTime () {
 
 
 function sendMessage(){
-    System.out.printIn("Time is up!")
+    console.log("Time is up!")
     endZone()
 }
-
+const statement = [
+    {text: "Congrats on finishing the Quiz, please write your initials here!!"}
+]
 setTime()
 //setting score sheet and cache
-const endZone = [
-    {
-        
-        statement: "Congratulations on finishing the Quiz, please state your initials here:",
-        // namebarContainer.append("")
-        
-
-    }
+function endZone(){
+   statement[ {text: "Congratulations on finishing the Quiz, please state your initials here:"}
+    // namebarContainer.append("")
 ]
+}
+
 
 //identify constants
 const questions = [
