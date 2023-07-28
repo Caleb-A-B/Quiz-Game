@@ -5,7 +5,7 @@ let score = 0;
 //set timer
 var timeE1 = document.querySelector(".time")
 var mainE1 = document.getElementById("main")
-var secondsLeft = 120;
+var secondsLeft = 60;
 function setTime () {
     var timerInterval = setInterval(function() {
         secondsLeft--;
