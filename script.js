@@ -34,14 +34,17 @@ setTime()
 function endZone(){
     var questionEl = document.createElement("h2")
     var answerContainer = document.createElement("div")
+
+    var textInput = document.createElement("input")
+    var quizContainer = document.getElementById("quiz")
+
+    textInput.setAttribute("type", "text")
     questionEl.id = "score"
     answerContainer.id = "answer-button"
-    questionEl.textContent = statement
-    answerContainer.append()
-    
-   statement[ {text: "Congratulations on finishing the Quiz, please state your initials here:"}
-    // namebarContainer.append("")
-]
+    questionEl.textContent = "Congratulations on finishing the Quiz, your score is " + score + "please write your initials here:"
+    quizContainer.appendChild(questionEl)
+    quizContainer.appendChild(answerContainer)
+    quizContainer.append()
 }
 
 
@@ -125,10 +128,13 @@ function startQuiz() {
     showQuestion()
 }
 function showQuestion() {
-    if(currentQuestionIndex > 5) {
-        endZone()
-    }
     var quizContainer = document.getElementById("quiz")
+    if(currentQuestionIndex > 5) {
+        quizContainer.innerHTML = ""
+        endZone()
+        return;
+    }
+    
     quizContainer.innerHTML = ""
 
     var questionEl = document.createElement("h2")
