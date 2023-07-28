@@ -30,7 +30,14 @@ const statement = [
 ]
 setTime()
 //setting score sheet and cache
+
 function endZone(){
+    var questionEl = document.createElement("h2")
+    var answerContainer = document.createElement("div")
+    questionEl.id = "score"
+    answerContainer.id = "answer-button"
+    answerContainer.append()
+    
    statement[ {text: "Congratulations on finishing the Quiz, please state your initials here:"}
     // namebarContainer.append("")
 ]
@@ -94,7 +101,8 @@ const questions = [
             {text: "symbol", correct: false},
             {text: "all of the above", correct: true},
         ]
-    }
+    },
+    endZone()
 ];
 startQuiz()
 function showResults() {
@@ -116,7 +124,9 @@ function startQuiz() {
     showQuestion()
 }
 function showQuestion() {
-    
+    if(currentQuestionIndex > 5) {
+        endZone()
+    }
     var quizContainer = document.getElementById("quiz")
     quizContainer.innerHTML = ""
 
@@ -149,6 +159,7 @@ function checkAnswer(event) {
         console.log(event.target.dataset.correct, typeof event.target.dataset.correct)
         if (event.target.dataset.correct === "true") {
             // System.out.printIn("You got it correct!")
+            score ++
             console.log("correct!")
         } else {
             // System.out.printIn("sorry, better luck next time")
@@ -156,7 +167,7 @@ function checkAnswer(event) {
         }
        
         currentQuestionIndex ++ 
-        showQuestion()
+        showQuestion() 
          if (isCorrect) {
         "congratulations"
         } else {
