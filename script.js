@@ -36,6 +36,7 @@ function endZone(){
     var answerContainer = document.createElement("div")
     questionEl.id = "score"
     answerContainer.id = "answer-button"
+    questionEl.textContent = statement
     answerContainer.append()
     
    statement[ {text: "Congratulations on finishing the Quiz, please state your initials here:"}
