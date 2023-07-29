@@ -14,7 +14,7 @@ function setTime () {
 
         if(secondsLeft === 0) {
             clearInterval(timerInterval);
-            
+            endZone
                 }
     }, 1000)
         }
@@ -45,7 +45,7 @@ function endZone(){
     questionEl.textContent = "Congratulations on finishing the Quiz, your score is " + score + "please write your initials here:"
     quizContainer.appendChild(questionEl)
     quizContainer.appendChild(answerContainer)
-    quizContainer.append()
+    quizContainer.appendChild(textInput)
 }
 
 
