@@ -2,6 +2,7 @@ let currentQuestionIndex = 0;
 let score = 0;
 
 
+
 //set timer
 var timeE1 = document.querySelector(".time")
 var mainE1 = document.getElementById("main")
@@ -13,8 +14,8 @@ function setTime () {
 
         if(secondsLeft === 0) {
             clearInterval(timerInterval);
-            sendMessage();
-        }
+            
+                }
     }, 1000)
         }
     
@@ -23,7 +24,7 @@ function setTime () {
 
 function sendMessage(){
     console.log("Time is up!")
-    endZone()
+    
 }
 const statement = [
     {text: "Congrats on finishing the Quiz, please write your initials here!!"}
@@ -34,7 +35,7 @@ setTime()
 function endZone(){
     var questionEl = document.createElement("h2")
     var answerContainer = document.createElement("div")
-
+    var username = document.querySelector("username")
     var textInput = document.createElement("input")
     var quizContainer = document.getElementById("quiz")
 

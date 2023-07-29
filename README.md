@@ -12,43 +12,17 @@
 
 ## General-Info
 
-This project is designed to be used as a test of knowledge for the user on javascript and their abilities. It is a smooth transition ability designed for a short knowledge test.
-## Technologies
+This project is designed to be used as a test of knowledge for the user on javascript and their abilities. It is a smooth transition ability designed for a short knowledge practice and enjoyment of the subject. The project includes the use of javascript, html, and css as the main compnonents.
 
-Project is created with:
-
-- [React](https://reactjs.org/)
-- [React-Router](https://reacttraining.com/react-router/)
-- [React-Redux](https://react-redux.js.org/)
-- [Passport.js](http://www.passportjs.org/)
-- [Material-UI](https://material-ui.com/)
-- [JavaScript](https://www.javascript.com/)
-- [Bootstrap](https://getbootstrap.com/)
-- [Node.js](https://nodejs.org/)
-- [Express.js](https://expressjs.com/)
-- [MongoDb](https://www.mongodb.com/)
-- [Mongoose](https://mongoosejs.com/)
-- [Socket.io](https://socket.io/)
-- [Bcrypt.js](https://www.npmjs.com/package/bcrypt)
-- [React-Chartjs-2](https://github.com/jerairrest/react-chartjs-2)
-
-## Containers
-
-![Image](assets/containers.png)
 
 ## Deployment
 
 Download the repository
-
-- Copy the repo
-- In your terminal, cd to the CRM folder directory, `$npm i`
-- To run on browser: `npm start`
-- You can also use the heroku-link for a demo:
-- Deployed link: 
+Use the GitHub link to open the website in a server browser
 
 ## Code Overview
 
-- Basic overview
+The code in this project is mainly used through JavaScript and its many functions to coinside and work with the html and css functions to develop a smooth application.
 
 ## Summary
 
@@ -59,17 +33,10 @@ Download the repository
 - This part we explain the CSS style 
 
 
-## Routing-Explained
-
-- Routing 
-
-![Image](assets/routing.png)
-
 ## Authors
 
-- John Doe
-- Jane Doe
+- Caleb Baca
 
 ## License
 
-- Open Source
+- MIT license
