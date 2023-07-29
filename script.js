@@ -38,6 +38,15 @@ function endZone(){
     var username = document.querySelector("username")
     var textInput = document.createElement("input")
     var quizContainer = document.getElementById("quiz")
+    var newButton = document.createElement('button');
+    localStorage.getItem("score")
+
+    //button set up
+    newButton.setAttribute('type', 'button')
+    newButton.innerHTML = "Save"
+    addEventListener("click", localStorage.setItem("score", textInput.value))
+
+
 
     textInput.setAttribute("type", "text")
     questionEl.id = "score"
@@ -46,6 +55,7 @@ function endZone(){
     quizContainer.appendChild(questionEl)
     quizContainer.appendChild(answerContainer)
     quizContainer.appendChild(textInput)
+    quizContainer.appendChild(newButton)
 }
 
 
