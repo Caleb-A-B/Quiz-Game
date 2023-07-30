@@ -26,11 +26,7 @@ The code in this project is mainly used through JavaScript and its many function
 
 ## Summary
 
-- This project is a mock-CRM for a start-up/small brewery company. 
-
-## CSS style
-
-- This part we explain the CSS style 
+- This project is a simple knowledge quiz for light hearted study
 
 
 ## Authors

@@ -40,12 +40,14 @@ function endZone(){
     var textInput = document.createElement("input")
     var quizContainer = document.getElementById("quiz")
     var newButton = document.createElement('button');
-    localStorage.getItem("score")
+    window.localStorage.getItem("score")
+    var data = JSON.parse(window.localStorage.getItem("score"))
+    
 
     //button set up
     newButton.setAttribute('type', 'button')
     newButton.innerHTML = "Save"
-    addEventListener("click", localStorage.setItem("score", textInput.value))
+    newButton.addEventListener("click", localStorage.setItem("score", JSON.stringify(textInput.value)))
 
 
 
