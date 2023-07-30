@@ -14,7 +14,7 @@ function setTime () {
 
         if(secondsLeft === 0) {
             clearInterval(timerInterval);
-            endZone
+            endZone()
                 }
     }, 1000)
         }
@@ -33,6 +33,7 @@ setTime()
 //setting score sheet and cache
 
 function endZone(){
+    document.getElementById("quiz").innerHTML = '';
     var questionEl = document.createElement("h2")
     var answerContainer = document.createElement("div")
     var username = document.querySelector("username")
